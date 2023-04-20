@@ -1,6 +1,8 @@
 {
-  "name": "color-picker",
-  "version": "0.1.0",
+  "name": "contentful-color-picker",
+  "version": "1.0.0",
+  "author": "Eric Schmidt",
+  "license": "ISC",
   "private": true,
   "dependencies": {
     "@contentful/app-sdk": "4.16.0",

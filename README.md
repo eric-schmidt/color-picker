@@ -1,19 +1,21 @@
-This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
+# Contentful Color Picker
 
-## How to use
+This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app) and leverages [react-colorful](https://github.com/omgovich/react-colorful) to create a color picker appearance for JSON object field types within Contentful. Note that this app is a proof-of-concept and may not be production-ready.
 
-Execute create-contentful-app with npm, npx or yarn to bootstrap the example:
+This app assumes color values in the following HSL (Hue/Saturation/Lightness) format within a JSON field, but could be extended to work with other color data formats as well:
 
-```bash
-# npx
-npx create-contentful-app --typescript
-
-# npm
-npm init contentful-app -- --typescript
-
-# Yarn
-yarn create contentful-app --typescript
 ```
+{
+    "h": <HUE>,
+    "l": <SATURATION>,
+    "s": <LIGHTNESS>,
+}
+```
+
+## Key Files
+
+- All field logic is contained within `/src/locations/Field.tsx`.
+- Color value text field logic lives within `/src/components/ColorValueControl.txx`.
 
 ## Available Scripts
 
@@ -43,11 +45,11 @@ Read [here](https://www.contentful.com/developers/docs/extensibility/app-framewo
 
 #### `npm run upload-ci`
 
-Similar to `npm run upload` it will upload your app to contentful and activate it. The only difference is   
+Similar to `npm run upload` it will upload your app to contentful and activate it. The only difference is  
 that with this command all required arguments are read from the environment variables, for example when you add
 the upload command to your CI pipeline.
 
-For this command to work, the following environment variables must be set: 
+For this command to work, the following environment variables must be set:
 
 - `CONTENTFUL_ORG_ID` - The ID of your organization
 - `CONTENTFUL_APP_DEF_ID` - The ID of the app to which to add the bundle
@@ -67,9 +69,8 @@ passed into each location. This can be used to interact with Contentful's
 management API. For example
 
 ```js
-  // Use the client
-  cma.locale.getMany({}).then((locales) => console.log(locales))
-
+// Use the client
+cma.locale.getMany({}).then((locales) => console.log(locales));
 ```
 
 Visit the [`contentful-management` documentation](https://www.contentful.com/developers/docs/extensibility/app-framework/sdk/#using-the-contentful-management-library)
