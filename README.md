@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app) and leverages [react-colorful](https://github.com/omgovich/react-colorful) to create a color picker appearance for JSON object field types within Contentful. Note that this app is a proof-of-concept and may not be production-ready.
 
-This app assumes color values in the following HSL (Hue/Saturation/Lightness) format within a JSON field, but could be extended to work with other color data formats as well:
+This app assumes color values in the following HSL (Hue/Saturation/Lightness) format within a JSON field, but could be extended to work with other color data formats, conversion to HEX, etc. as well:
 
 ```
 {
